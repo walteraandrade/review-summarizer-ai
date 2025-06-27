@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ onMenuClick }) => {
         </h1>
       </div>
       <p className="mt-3 text-xl text-muted-foreground">
-        Get the gist of what the world thinks about any movie or album.
+        Get the gist of what the world thinks.
       </p>
     </header>
   );
