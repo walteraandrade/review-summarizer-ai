@@ -1,4 +1,3 @@
-
 # ✨ Review Summarizer AI (Next.js Version)
 
 An intelligent web application that leverages the Google Gemini API to scrape the web, analyze public opinion, and generate a comprehensive overview of any movie, album, song, artist, book, or series.
@@ -72,6 +71,34 @@ Deploying to Vercel is now incredibly simple:
     -   **Key**: `API_KEY`
     -   **Value**: `Your_Google_Gemini_API_Key`
 5.  Click **Deploy**. Done!
+=======
+-   **Frontend**: [React](https://reactjs.org/) & [TypeScript](https://www.typescriptlang.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **AI**: [Google Gemini API](https://ai.google.dev/)
+-   **Dependencies**: Served via ESM (`esm.sh`) with no build step.
+
+## ⚙️ Getting Started
+
+This project is designed to be run in an environment that provides the Google Gemini API key as an environment variable.
+
+### Prerequisites
+
+-   [Git](https://git-scm.com/)
+-   A modern web browser
+-   A Google Gemini API Key. You can get one from [Google AI Studio](https://makersuite.google.com/app/apikey).
+
+### Deployment (Recommended)
+
+The easiest way to run this application is to deploy it to a platform that supports environment variables, like Vercel or Netlify.
+
+1.  **Fork/Clone this repository.**
+2.  **Deploy to Vercel or Netlify:**
+    -   Import your repository.
+    -   The platform should detect it as a static site (no build command needed).
+    -   **Crucially**, add an environment variable:
+        -   **Key**: `API_KEY`
+        -   **Value**: `Your_Google_Gemini_API_Key`
+3.  Deploy and enjoy your live application!
 
 ---
 
@@ -81,3 +108,21 @@ Deploying to Vercel is now incredibly simple:
 -   **Comparison Tool**: Compare two topics side-by-side.
 -   **Enhanced User Experience**: User accounts, a "Discover" mode, and theme customization.
 -   **Expanded Data & Localization**: Integrate with other APIs (Spotify, TMDB) and translate the UI.
+
+This project has a lot of potential for growth. Here are some ideas for future development:
+
+-   **Deeper Content Analysis**:
+    -   Analyze lyrical themes in music or character development in movies/books.
+    -   Identify recurring motifs or symbols in an artist's body of work.
+
+-   **Comparison Tool**:
+    -   Allow users to compare two topics side-by-side (e.g., "The Beatles vs. The Rolling Stones" or "Star Wars vs. Star Trek").
+
+-   **Enhanced User Experience**:
+    -   **User Accounts**: Allow users to sign in to save their favorite analyses and create custom lists.
+    -   **"Discover" Mode**: A feature that suggests interesting or trending works to explore.
+    -   **Theme Customization**: Add a light mode and other theme options for users to choose from.
+
+-   **Expanded Data & Localization**:
+    -   Integrate with other APIs (e.g., Spotify for song previews, TMDB for movie posters).
+    -   **Localization**: Translate the UI into different languages to make it accessible to a global audience.
