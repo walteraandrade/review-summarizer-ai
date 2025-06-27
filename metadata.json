@@ -1,0 +1,5 @@
+{
+  "name": "Review Summarizer AI",
+  "description": "An AI-powered application that scrapes the web for reviews on movies and albums, and provides a concise summary of the public's opinion.",
+  "requestFramePermissions": []
+}
