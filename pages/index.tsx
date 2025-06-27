@@ -5,7 +5,9 @@ import Header from '../components/Header';
 import SearchInput from '../components/SearchInput';
 import ResultsDisplay from '../components/ResultsDisplay';
 import LoadingSpinner from '../components/LoadingSpinner';
-import HistoryPanel from '../components/HistoryPanel';
+import dynamic from 'next/dynamic';
+
+const HistoryPanel = dynamic(() => import('../components/HistoryPanel'), { ssr: false });
 import { analyzeTopic } from '../services/geminiService';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 import type { AnalysisResult } from '../types';
