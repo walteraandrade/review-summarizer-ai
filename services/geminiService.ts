@@ -1,11 +1,12 @@
+
 import { GoogleGenAI } from "@google/genai";
 import type { GroundingChunk, Source, AnalysisResult } from '../types';
 
-if (!process.env.API_KEY) {
-    throw new Error("API_KEY environment variable not set");
+if (!process.env.NEXT_PUBLIC_GEMINI_API_KEY) {
+    throw new Error("NEXT_PUBLIC_GEMINI_API_KEY environment variable not set");
 }
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
 
 export async function analyzeTopic(topic: string): Promise<AnalysisResult | null> {
     const prompt = `
@@ -95,8 +96,19 @@ export async function analyzeTopic(topic: string): Promise<AnalysisResult | null
     } catch (error) {
         console.error("Error calling Gemini API:", error);
         if (error instanceof Error) {
-            throw new Error(`Failed to communicate with the AI service. ${error.message}`);
+            if ('status' in error && typeof error.status === 'number') {
+                if (error.status === 400) {
+                    throw new Error("Bad request to AI service. Please check your input.");
+                } else if (error.status === 401 || error.status === 403) {
+                    throw new Error("Authentication error with AI service. Please check your API key.");
+                } else if (error.status === 429) {
+                    throw new Error("Too many requests to AI service. Please try again later (rate limit exceeded).");
+                } else if (error.status >= 500) {
+                    throw new Error("AI service is currently unavailable. Please try again later.");
+                }
+            }
+            throw new Error(`Failed to communicate with the AI service: ${error.message}`);
         }
-        throw new Error("Failed to communicate with the AI service. An unknown error occurred.");
+        throw new Error("An unknown error occurred while communicating with the AI service.");
     }
 }

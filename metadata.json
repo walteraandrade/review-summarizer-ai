@@ -1,5 +1,6 @@
+
 {
   "name": "Review Summarizer AI",
-  "description": "An AI-powered application that scrapes the web for reviews on movies and albums, and provides a concise summary of the public's opinion.",
+  "description": "An AI app that scrapes the web with Google Gemini to analyze any movie, album, song, artist, book, or series. Get concise summaries of public opinion, tailored technical details, and explore an interactive Influence Map to discover the connections between creative works.",
   "requestFramePermissions": []
 }

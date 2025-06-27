@@ -21,7 +21,7 @@ const ResultsDisplay: React.FC<ResultsDisplayProps> = ({ result, onInfluenceClic
     <div className="animate-fade-in space-y-8">
       <div>
         <h2 className="text-3xl font-bold text-foreground mb-4">Summary</h2>
-        <div className="prose prose-invert prose-xl max-w-none text-foreground">
+        <div className="prose prose-invert prose-lg max-w-none text-foreground">
           {formattedSummary}
         </div>
       </div>
